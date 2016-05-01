@@ -197,8 +197,8 @@ function showCanvasData(argument) {
 					baseImage.data[j] = (1-alpha)*baseImage.data[j]+alpha*layer[i].data[j];
 					baseImage.data[j+1] = (1-alpha)*baseImage.data[j+1]+alpha*layer[i].data[j+1];
 					baseImage.data[j+2] = (1-alpha)*baseImage.data[j+2]+alpha*layer[i].data[j+2];
-				} else {
-
+				} 
+				else {
 					colorHEX = document.getElementById("color").value;
 					colorRGB = hex2rgb(colorHEX);
 					colorHSV = rgb2hsv(colorRGB.r,colorRGB.g,colorRGB.b);
