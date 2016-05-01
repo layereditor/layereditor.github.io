@@ -190,9 +190,9 @@ function showCanvasData(argument) {
 		layer[7] = contextBlankCanvas.getImageData(0,0,440,440)
 	console.log(oraginColorChecked);
     for(var i = 0; i < 8; i++){
-    	// isMiao = 1
+    	console.log(layer[i]);
 	    for(var j = 0; j < baseImage.data.length - 1; j++){
-	    	if (layer[i].data[j]!=255||layer[i].data[j+1]!=255||layer[i].data[j+2]!=255){
+	    	if (layer[i].data[j]!=255 || layer[i].data[j+1]!=255 || layer[i].data[j+2] != 255){
 				if(oraginColorChecked) {
 					baseImage.data[j] = (1-alpha)*baseImage.data[j]+alpha*layer[i].data[j];
 					baseImage.data[j+1] = (1-alpha)*baseImage.data[j+1]+alpha*layer[i].data[j+1];
@@ -210,24 +210,8 @@ function showCanvasData(argument) {
 					baseImage.data[j+1] = (1-alpha)*baseImage.data[j+1]+alpha*rgb[1];
 					baseImage.data[j+2] = (1-alpha)*baseImage.data[j+2]+alpha*rgb[2];
 				}
-
-			 //    }
-				//if (i == 1){
-				// 	baseImage.data[j] = (1-alpha)*baseImage.data[j]+alpha*layer[i].data[j];
-				//baseImage.data[j+1] = (1-alpha)*baseImage.data[j+1]+alpha*layer[i].data[j+1];
-				//baseImage.data[j+2] = (1-alpha)*baseImage.data[j+2]+alpha*layer[i].data[j+2];
-				//}
-
-			    // baseImage.data[j] = (1-alpha)*baseImage.data[j]+alpha*rgb[0];
-	    		// baseImage.data[j+1] = (1-alpha)*baseImage.data[j+1]+alpha*rgb[1];
-	    		// baseImage.data[j+2] = (1-alpha)*baseImage.data[j+2]+alpha*rgb[2];
-
-	    		// baseImage.data[j] = (1-alpha)*baseImage.data[j]+alpha*layer[i].data[j];
-	    		// baseImage.data[j+1] = (1-alpha)*baseImage.data[j+1]+alpha*layer[i].data[j+1];
-	    		// baseImage.data[j+2] = (1-alpha)*baseImage.data[j+2]+alpha*layer[i].data[j+2];
 	    	}
 	    	j=j+2;
-	    	// baseImage.data[i] = layer.data[i];
 	    }
 	}
     context.putImageData(baseImage, 0, 0)
