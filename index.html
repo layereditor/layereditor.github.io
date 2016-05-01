@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+	<head>
+  	<meta charset="UTF-8">
+  	<title>Layer Editor</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  	<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+  	<script type="text/javascript" src="js/CamanJS-4.1.1/dist/caman.full.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.3.js"></script>
+  </head>
+  <body>
+    <h1><strong>Layer</strong> Editor</h1>
+    <div class="container">
+      <table>
+        <tr>
+          <td scope="col" colspan="4" rowspan="4">
+            <canvas id="myCanvas" width="440" height="440"></canvas> 
+            <canvas id="whiteCanvas" width="440" height="440" hidden></canvas>
+            <canvas id="myCanvasHidden1" width="440" height="440" hidden></canvas>
+            <canvas id="myCanvasHidden2" width="440" height="440" hidden></canvas> 
+            <canvas id="myCanvasHidden3" width="440" height="440" hidden></canvas> 
+            <canvas id="myCanvasHidden4" width="440" height="440" hidden></canvas>  
+            <canvas id="myCanvasHidden5" width="440" height="440" hidden></canvas> 
+            <canvas id="myCanvasHidden6" width="440" height="440" hidden></canvas> 
+            <canvas id="myCanvasHidden7" width="440" height="440" hidden></canvas> 
+            <canvas id="myCanvasHidden8" width="440" height="440" hidden></canvas> 
+          </td>
+          <td scope="col" colspan="1" style="text-align: right; padding-right: 10px">
+            Object
+          </td>
+          <td scope="col" colspan="3" style="text-align: left; padding-left: 20px">
+            <input type="radio" name="object" value="apple" checked> Apple
+            <input type="radio" name="object" value="rose"> Rose    
+          </td>
+        </tr>
+        <tr style="height:110px">
+          <td scope="col" colspan="1" style="text-align: right; padding-right: 10px">
+            Color
+          </td>
+          <td scope="col" colspan="3" style="text-align: left; padding-left: 20px">
+            <input type="color" id="color" onchange="updateColor();"/>
+            <input type="checkbox" id="oraginColor" checked onchange="changeColorCheckBox()"> Use Oragin Color    
+          </td>
+        </tr>
+        <tr style="height:110px">
+          <td scope="col" colspan="1" style="text-align: right; padding-right: 10px">
+            Alpha
+          </td>
+          <td scope="col" colspan="3" style="text-align: left; padding-left: 20px">
+            <input type="range" id="alphaRange"  min="0" max="1" value="0.5" step="0.01" onchange="updateAlpha();"/>
+            <output id="alphaValue">0.5</output>
+          </td>
+        </tr>
+        <tr style="height:110px">
+          <td scope="col" colspan="4" style="text-align: center;">
+            <input type="button" id="showCanvasData" class="button" value="Render" onclick="showCanvasData()" />
+            <a id="download" class="button">Download as image</a>
+          </td>
+        </tr>
+  <!--       <tr>
+          <td scope="col" colspan="4" style="text-align: center;">
+            <a id="download" class="button">Download as image</a>
+          </td>
+        </tr> -->
+        <tr>
+          <td><img id="thumbnail1" width="110" height="110"></td>
+          <td><img id="thumbnail2" width="110" height="110"></td>
+          <td><img id="thumbnail3" width="110" height="110"></td>
+          <td><img id="thumbnail4" width="110" height="110"></td>
+          <td><img id="thumbnail5" width="110" height="110"></td>
+          <td><img id="thumbnail6" width="110" height="110"></td>
+          <td><img id="thumbnail7" width="110" height="110"></td>
+          <td><img id="thumbnail8" width="110" height="110"></td>
+        </tr>
+        <tr>
+          <td>  
+            <input type="radio" name="layer1" value="show" checked> Show<br>
+            <input type="radio" name="layer1" value="hidden"> Hidden
+          </td>
+          <td>  
+            <input type="radio" name="layer2" value="show" checked> Show<br>
+            <input type="radio" name="layer2" value="hidden"> Hidden
+          </td>
+          <td>  
+            <input type="radio" name="layer3" value="show" checked> Show<br>
+            <input type="radio" name="layer3" value="hidden"> Hidden
+          </td>
+          <td>  
+            <input type="radio" name="layer4" value="show" checked> Show<br>
+            <input type="radio" name="layer4" value="hidden"> Hidden
+          </td>
+          <td>  
+            <input type="radio" name="layer5" value="show" checked> Show<br>
+            <input type="radio" name="layer5" value="hidden"> Hidden
+          </td>
+          <td>  
+            <input type="radio" name="layer6" value="show" checked> Show<br>
+            <input type="radio" name="layer6" value="hidden"> Hidden
+          </td>
+          <td>  
+            <input type="radio" name="layer7" value="show" checked> Show<br>
+            <input type="radio" name="layer7" value="hidden"> Hidden
+          </td>
+          <td>  
+            <input type="radio" name="layer8" value="show" checked> Show<br>
+            <input type="radio" name="layer8" value="hidden"> Hidden
+          </td>
+        </tr>
+      </table>
+    </div>
+	  <script type="text/javascript" src="js/imageprocess.js"></script>
+	</body>
+	<footer>
+		©2016 Yiwen Shi. All rights reserved.
+	</footer>
+</html>
