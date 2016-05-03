@@ -45,9 +45,9 @@ $('input[name="object"]:radio').change(function() {
 	imageObjHidden8.src = 'img/' + path + '/layer8.png';
 })
 
-oraginColorChecked = true;
+originColorChecked = true;
 function changeColorCheckBox() {
-    oraginColorChecked = document.getElementById('oraginColor').checked;
+    originColorChecked = document.getElementById('originColor').checked;
 };
 
 function updateColor() {
@@ -188,12 +188,12 @@ function showCanvasData(argument) {
 		layer[7] = contextHidden8.getImageData(0,0,440,440);
 	else
 		layer[7] = contextBlankCanvas.getImageData(0,0,440,440)
-	console.log(oraginColorChecked);
+	console.log(originColorChecked);
     for(var i = 0; i < 8; i++){
     	console.log(layer[i]);
 	    for(var j = 0; j < baseImage.data.length - 1; j++){
 	    	if (layer[i].data[j]!=255 || layer[i].data[j+1]!=255 || layer[i].data[j+2] != 255){
-				if(oraginColorChecked) {
+				if(originColorChecked) {
 					baseImage.data[j] = (1-alpha)*baseImage.data[j]+alpha*layer[i].data[j];
 					baseImage.data[j+1] = (1-alpha)*baseImage.data[j+1]+alpha*layer[i].data[j+1];
 					baseImage.data[j+2] = (1-alpha)*baseImage.data[j+2]+alpha*layer[i].data[j+2];
